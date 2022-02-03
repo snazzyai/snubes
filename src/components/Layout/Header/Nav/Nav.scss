@@ -1,0 +1,13 @@
+@import '/src/styles/base';
+
+.nav-menu{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+
+  .nav-link {
+    padding: 0 1rem;
+    color: map-get($colors, grey-light)
+  }
+}
+
