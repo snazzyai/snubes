@@ -1,0 +1,47 @@
+@use '/src/styles/base';
+
+.form-input {
+  margin-top:1.6rem;
+  &__item {
+    margin: 1rem 0;
+    label {
+      margin-right: 2rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    &__input {
+      width: 22.5rem;
+      height: 2.8rem;
+      border: 1px solid map-get(base.$colors, blue-light);
+      border-radius: 4px;
+      padding-left: 0.5rem;
+
+      &::placeholder {
+        color: map-get(base.$colors, blue-light);
+        font-size: 1rem;
+      }
+
+      &--add-margin {
+        margin-right: 1.8rem;
+      }
+    }
+    &__submit {
+      padding: 0.5rem 0;
+      &__button {
+        margin-left: 5rem;
+        width: 17.5rem;
+        height: 3rem;
+        background: map-get(base.$colors, blue-dark);
+        outline: none;
+        border: none;
+        border-radius: 2px;
+        font-size: 1.1rem;
+        color: map-get(base.$colors, light);
+        font-weight: 500;
+      }
+    }
+
+  }
+
+}
+

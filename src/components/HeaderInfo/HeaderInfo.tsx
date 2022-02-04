@@ -13,7 +13,6 @@ const HeaderInfo: React.FC = () => (
                 </div>
               ))
       }
-
     </div>
     <div />
   </div>
