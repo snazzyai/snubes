@@ -35,7 +35,6 @@ const FormInput: React.FC = () => {
             value={formik.values.company}
             placeholder="Company"
           />
-          {console.log(formik)}
         </div>
         <div className="form-input__item">
           <label htmlFor="fullName">Name</label>
