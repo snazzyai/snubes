@@ -1,4 +1,4 @@
-@import '/src/styles/base';
+@use '/src/styles/base';
 
 .nav-menu{
   display: flex;
@@ -7,7 +7,7 @@
 
   .nav-link {
     padding: 0 1rem;
-    color: map-get($colors, grey-light)
+    color: map-get(base.$colors, grey-light)
   }
 }
 
