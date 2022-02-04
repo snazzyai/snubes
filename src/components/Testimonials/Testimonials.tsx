@@ -1,8 +1,8 @@
-import './Testimonial.scss';
+import './Testimonials.scss';
 import Slider, { Settings } from 'react-slick';
-import TestimonialItems from './TestimonialItems';
+import TestimonialItems from './TestimonialsItems';
 
-const Testimonial: React.FC = () => {
+const Testimonials: React.FC = () => {
   const settings: Settings = {
     lazyLoad: 'ondemand',
     dots: true,
@@ -38,4 +38,4 @@ const Testimonial: React.FC = () => {
   );
 };
 
-export default Testimonial;
+export default Testimonials;
