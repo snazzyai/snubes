@@ -7,7 +7,7 @@ const HeaderInfo: React.FC = () => (
     <div className="header-info--items">
       {
               headerInfoItem.map((item) => (
-                <div className="header-info--items--item">
+                <div className="header-info--items--item" key={item.title}>
                   <p className="header-info--items--item__numbers">{item.numbers}</p>
                   <p className="header-info--items--item__title">{item.title}</p>
                 </div>
