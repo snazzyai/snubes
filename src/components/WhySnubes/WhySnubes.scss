@@ -1,0 +1,25 @@
+@use '/src/styles/base';
+
+.why-snubes {
+  background-size: cover;
+  background: url("/src/assets/images/why-snubes.png") no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding: 4.3rem 27%;
+  color: map-get(base.$colors, grey-darker);
+  &>p {
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+  &-item{
+    &__heading {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+    &__text {
+      font-weight: 500;
+      font-size: 1.1rem;
+      line-height: 1.7rem;
+    }
+  }
+}
