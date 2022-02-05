@@ -1,14 +1,16 @@
 import Head from '../../Head/Head';
 import Offerings from '../../Offerings/Offerings';
 import WhySnubes from '../../WhySnubes/WhySnubes';
-import Testimonial from '../../Testimonial/Testimonial';
+import Testimonials from '../../Testimonials/Testimonials';
+import Partners from '../../Partners/Partners';
 
 const Body: React.FC = () => (
   <div>
     <Head />
     <Offerings />
     <WhySnubes />
-    <Testimonial />
+    <Testimonials />
+    <Partners />
   </div>
 );
 
