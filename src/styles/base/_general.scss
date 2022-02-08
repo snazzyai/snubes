@@ -1,11 +1,16 @@
 
 $colors: (
-        light:  #ffffff,
-        dark: #000000,
+        white:  #ffffff,
+        black: #000000,
+        black-lighter: #f9f9f9,
         grey-light: #7f7f7f,
         grey-dark: #445566,
         grey-darker: #4a4a4a,
         blue-lighter: #e5e9ee,
         blue-light: #aabbcc,
         blue-dark: #0099EE
-)
+);
+
+$breakpoint-tablet: 1060px;
+
+$breakpoint-mobile: 530px;
