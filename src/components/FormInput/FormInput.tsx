@@ -23,9 +23,9 @@ const FormInput: React.FC = () => {
 
   return (
     <div className="form-input">
-      <form onSubmit={formik.handleSubmit} className="form-input">
+      <form onSubmit={formik.handleSubmit}>
         <div className="form-input__item">
-          <label htmlFor="company">Company</label>
+          <label className="margin-left" htmlFor="company">Company</label>
           <input
             id="company"
             name="company"
