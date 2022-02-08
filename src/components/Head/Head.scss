@@ -1,7 +1,21 @@
+@use '/src/styles/base';
 .head {
-  background: url("/src/assets/images/group-7-compressed.png");
+  background: url("/src/assets/images/group-7-compressed.png") right center;
   background-size: cover;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border: 1px solid red;
+
+  @media (max-width: base.$breakpoint-tablet) {
+    background: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: base.$breakpoint-mobile) {
+    display: flex;
+    flex-direction: column;
+  }
 }

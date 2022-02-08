@@ -1,16 +1,17 @@
+@use '/src/styles/base';
 .header-info {
   color: #ffffff;
   padding-top: 22rem;
   margin-right: 2rem;
 
-  .header-info__text{
+  &__text{
     font-size: 1.1rem;
     font-weight: 500;
     margin-bottom: -1rem;
     margin-left: 1.5rem
 
   }
-  .header-info--items{
+  &--items{
     display: flex;
     flex-direction: row;
     &--item{
@@ -24,12 +25,24 @@
         }
         &__title {
           font-size:1.1rem;
-
-
         }
 
     }
 
   }
+}
 
+@media (max-width: base.$breakpoint-tablet) {
+  .header-info {
+    background: url("/src/assets/images/group-7-compressed.png");
+    background-size: cover;
+    padding: 1.5rem 0;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    &--items{
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
 }

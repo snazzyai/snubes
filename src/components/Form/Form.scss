@@ -6,7 +6,6 @@
   color: map-get(base.$colors, grey-dark);
   padding: 1rem;
   border-radius: 10px;
-  width: 39rem;
   margin: 1.5rem 0 1.5rem 5rem;
   border: 1px solid black;
 
@@ -19,6 +18,24 @@
     font-size: 1.1rem;
     font-weight: 500;
 
+  }
+
+}
+
+@media (max-width:base.$breakpoint-tablet ) {
+  .form-box {
+    margin-left: 0;
+    border: none;
+  }
+}
+
+@media (max-width:base.$breakpoint-mobile) {
+  .form-box {
+    text-align: center;
+    color: map-get(base.$colors, grey-dark);
+    border-radius: 10px;
+    margin: 0 auto;
+    border: 1px solid black;
   }
 
 }

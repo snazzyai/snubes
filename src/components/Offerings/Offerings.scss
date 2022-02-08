@@ -4,7 +4,9 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 0 13rem;
+  //flex-wrap: wrap;
+  padding: 0 10rem;
+  border: 1px solid black;
 
   &-item {
     padding: 2rem 2rem;
@@ -19,5 +21,37 @@
       font-weight: 500;
       color: map-get(base.$colors, grey-dark)
     }
+  }
+
+}
+
+@media (max-width: base.$breakpoint-tablet ) {
+  .offerings {
+    padding: 0 0;
+    &-item{
+      &__heading{
+
+      }
+      &__text {
+
+      }
+    }
+
+  }
+}
+
+@media (max-width: base.$breakpoint-mobile ) {
+  .offerings {
+    padding: 0 0;
+    flex-wrap: wrap;
+    &-item{
+      &__heading{
+
+      }
+      &__text {
+
+      }
+    }
+
   }
 }

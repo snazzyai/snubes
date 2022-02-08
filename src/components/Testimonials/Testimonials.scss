@@ -3,6 +3,7 @@
 .testimonial {
   margin: 0 auto;
   width: 75%;
+  border: 1px solid black;
 
   &-item {
     text-align: center;
@@ -18,7 +19,7 @@
       padding: 1.5rem 0
     }
     &__quote{
-      padding: 0 15rem;
+      padding: 0 14rem;
       font-style: italic;
       text-align: justify;
     }
@@ -35,8 +36,8 @@
 
 .slick-next,
 .slick-prev {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .button__bar {
@@ -68,3 +69,40 @@
   }
 
 }
+
+@media (max-width: base.$breakpoint-tablet ) {
+  .testimonial {
+    width: 90%;
+    &-item {
+      text-align: center;
+      padding-bottom: 1.8rem;
+      font-size: 1.1rem;
+      color: map-get(base.$colors, grey-dark);
+      &__quote{
+        padding: 0 7rem;
+        font-style: italic;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+@media (max-width: base.$breakpoint-mobile ) {
+  .testimonial {
+    width: 90%;
+    position: relative;
+    &-item {
+      text-align: center;
+      padding-bottom: 1.8rem;
+      font-size: 1.1rem;
+      color: map-get(base.$colors, grey-dark);
+      &__quote{
+        padding: 0 2rem;
+        font-style: italic;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+
