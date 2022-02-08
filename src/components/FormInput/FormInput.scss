@@ -69,18 +69,18 @@
   }
 
   @media (max-width:base.$breakpoint-mobile ) {
-    .form-input__item{
+    .form-input__item {
       display: flex;
       flex-direction: column;
       align-items: center;
 
       label {
-        font-size:0.9rem ;
+        font-size: 0.9rem;
         margin-right: 14rem
       }
 
-      
-      &__input{
+
+      &__input {
         width: 17rem;
 
         &--add-margin {
@@ -88,55 +88,12 @@
         }
 
       }
+
       &__submit__button {
         margin: 0;
         width: 12rem;
       }
     }
-
-    //&__item {
-    //  //display: flex;
-    //  //flex-direction: column;
-    //  label {
-    //    margin: 0.5rem 20rem 0.5rem 0;
-    //    font-size:0.9rem ;
-    //  }
-    //  &__input {
-    //    width: 17rem;
-    //    height: 2.8rem;
-    //
-    //    border: 1px solid map-get(base.$colors, blue-light);
-    //    border-radius: 4px;
-    //    margin: 0 auto;
-    //
-    //    &--remove-margin {
-    //
-    //    }
-    //    &::placeholder {
-    //      color: map-get(base.$colors, blue-light);
-    //      font-size: 1rem;
-    //    }
-    //  }
-    //  &__submit {
-    //    padding: 0.7rem 0;
-    //    &__button {
-    //      //margin-left: 0;
-    //      //width: 7.5rem;
-    //      //height: 3rem;
-    //      //background: map-get(base.$colors, blue-dark);
-    //      //outline: none;
-    //      //border: none;
-    //      //border-radius: 2px;
-    //      //font-size: 1.1rem;
-    //      //color: map-get(base.$colors, white);
-    //      //font-weight: 500;
-    //    }
-    //  }
-    //
-    //}
   }
-
-
-
 }
 
