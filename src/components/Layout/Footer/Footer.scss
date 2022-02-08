@@ -1,0 +1,54 @@
+@use '/src/styles/base';
+
+.footer {
+  background-color: map-get(base.$colors, black-lighter);
+  padding-bottom: 5rem;
+  padding-top: 2rem;
+
+  img {
+    width: 5.3rem;
+    height: 5.3rem;
+    margin-top: 1.7rem;
+
+
+  }
+
+  &-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 4rem 0;
+
+    background-color: map-get(base.$colors, grey-darker);
+
+
+    @media(max-width: base.$breakpoint-tablet){
+      display: flex;
+      flex-direction: column;
+      padding-left: 2rem;
+    }
+
+    &-item {
+
+      &__text{
+        font-size: 1rem;
+      }
+      &__link {
+        color: map-get(base.$colors, white);
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-bottom {
+    text-align: center;
+    color: map-get(base.$colors, grey-darker);
+    font-size: 1rem;
+  }
+
+
+
+
+
+}
