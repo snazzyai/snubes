@@ -1,4 +1,4 @@
-
+@use '/src/styles/base';
 
 .Header {
   //width: 100%;
@@ -6,10 +6,17 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
   border: 1px solid black;
   padding: 2rem 0;
 }
 .logo {
   margin:0.5rem
+}
+
+@media (max-width:base.$breakpoint-tablet ) {
+    .Header {
+      justify-content:space-between;
+      padding: 0 2rem
+    }
 }
