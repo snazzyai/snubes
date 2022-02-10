@@ -1,0 +1,16 @@
+@use '/src/styles/base';
+
+.menu-content{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  li {
+    padding: .5rem;
+    cursor: pointer;
+    color: map-get(base.$colors, grey-light)
+  }
+}
+
+@media (max-width:base.$breakpoint-tablet ) {
+
+}
