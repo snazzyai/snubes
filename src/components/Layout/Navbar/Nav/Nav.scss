@@ -1,0 +1,32 @@
+@use '/src/styles/base';
+
+.nav-menu{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+
+  .nav-link {
+    padding: 0 1rem;
+    color: map-get(base.$colors, grey-light)
+  }
+
+  &__burger {
+    display: none;
+  }
+
+}
+
+@media (max-width:base.$breakpoint-tablet ) {
+  .nav-menu{
+    display: none;
+    &__burger {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
