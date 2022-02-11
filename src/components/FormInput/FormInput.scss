@@ -1,34 +1,65 @@
 @use '/src/styles/base';
 
 .form-input {
-  margin-top:1.6rem;
-  &__item {
-    margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+
+
+
+  &__label-view{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
     label {
-      margin-right: 0.8rem;
       font-size: 1.1rem;
       font-weight: 500;
+      margin: 1.5rem 0
     }
+
+  }
+
+  &__form {
+    margin-top: 3rem;
+    margin-left: 2rem;
+  }
+
+
+  &__item {
+    padding-top: 1rem;
+    text-align: left;
+
+
+
     &__input {
       width: 22.5rem;
       height: 2.8rem;
       border: 1px solid map-get(base.$colors, blue-light);
       border-radius: 4px;
-      padding-left: 0.5rem;
+      padding-left: 1rem;
+
+
 
       &::placeholder {
         color: map-get(base.$colors, blue-light);
         font-size: 1rem;
       }
 
-      &--add-margin {
-        margin-right: 1.8rem;
-      }
+    }
+
+    &__select {
+      border: 1px solid map-get(base.$colors, blue-light);
+      height: 3.0rem;
+      border-radius: 4px;
+      position: absolute;
+
     }
     &__submit {
       padding: 0.5rem 0;
       &__button {
-        margin-left: 5rem;
         width: 17.5rem;
         height: 3rem;
         background: map-get(base.$colors, blue-dark);
@@ -39,6 +70,9 @@
         color: map-get(base.$colors, white);
         font-weight: 500;
       }
+    }
+    .phone__input {
+       text-align: center;
     }
 
   }
@@ -69,6 +103,25 @@
   }
 
   @media (max-width:base.$breakpoint-mobile ) {
+    .form-input{
+      &__form{
+        margin-left: 1rem;
+      }
+      &__item{
+        text-align: left;
+
+        &__select{
+          left: 35%
+        }
+
+      }
+
+      //.phone__input {
+      //  padding-left: 5rem;
+      //}
+
+    }
+
     .form-input__item {
       display: flex;
       flex-direction: column;
@@ -78,22 +131,17 @@
         font-size: 0.9rem;
         margin-right: 14rem
       }
-
-
       &__input {
-        width: 17rem;
-
-        &--add-margin {
-          margin-right: 0;
-        }
+        width: 10rem;
 
       }
 
       &__submit__button {
         margin: 0;
-        width: 12rem;
+        width: 9rem;
       }
     }
+
   }
 }
 
