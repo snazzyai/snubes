@@ -1,82 +1,133 @@
 import './FormInput.scss';
-import { useFormik } from 'formik';
+import { Formik } from 'formik';
+import * as yup from 'yup';
+import { useFormStore } from '../../store/store';
+import countryData from '../../data/countrycode';
+import useGeoLocationFinder from '../../hooks/useGeoLocation';
 
-interface InitialValues {
-  company: string
-  fullName: string
-  phone: string
-  email: string
-}
+const schema = yup.object().shape({
+  company: yup.string().matches(/^[A-Za-z]+$/).max(80),
+  name: yup.string().max(50),
+  phone: yup.string().matches(/^[0-9]+$/),
+  email: yup.string().email(),
+
+});
+
 const FormInput: React.FC = () => {
-  const formik = useFormik<InitialValues>({
-    initialValues: {
-      company: '',
-      fullName: '',
-      phone: '',
-      email: '',
-    },
-    onSubmit: (values) => {
-      console.log(JSON.stringify(values, null, 2));
-    },
-
-  });
+  const { ...storeItems } = useFormStore();
+  const code = useGeoLocationFinder();
 
   return (
     <div className="form-input">
-      <form onSubmit={formik.handleSubmit}>
-        <div className="form-input__item">
-          <label className="margin-left" htmlFor="company">Company</label>
-          <input
-            id="company"
-            name="company"
-            type="text"
-            className="form-input__item__input form-input__item__input--add-margin"
-            onChange={formik.handleChange}
-            value={formik.values.company}
-            placeholder="Company"
-          />
-        </div>
-        <div className="form-input__item">
-          <label htmlFor="fullName">Name</label>
-          <input
-            id="fullName"
-            name="fullName"
-            type="text"
-            className="form-input__item__input"
-            onChange={formik.handleChange}
-            value={formik.values.fullName}
-            placeholder="Full name"
-          />
-        </div>
-        <div className="form-input__item">
-          <label htmlFor="phone">Phone</label>
-          <input
-            id="phone"
-            name="phone"
-            type="phone"
-            className="form-input__item__input"
-            onChange={formik.handleChange}
-            value={formik.values.phone}
-            placeholder="+49"
-          />
-        </div>
-        <div className="form-input__item">
-          <label htmlFor="email">E-mail</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            className="form-input__item__input"
-            onChange={formik.handleChange}
-            value={formik.values.email}
-            placeholder="E-mail"
-          />
-        </div>
-        <div className="form-input__item__submit">
-          <button className="form-input__item__submit__button" type="submit">Get Informed</button>
-        </div>
+      <div className="form-input__label-view">
+        <label className="margin-left" htmlFor="company">Company</label>
+        <label htmlFor="fullName">Name</label>
+        <label htmlFor="phone">Phone</label>
+        <label htmlFor="email">E-mail</label>
+      </div>
+      <Formik
+        initialValues={{
+          company: '',
+          name: '',
+          phone: '',
+          email: '',
+        }}
+        validationSchema={schema}
+        onSubmit={() => {
+          storeItems.updateDialCode(code);
+          storeItems.setFormIsSubmitted();
+        }}
+      >
+        {({
+          handleSubmit, handleChange, values, isValid, errors,
+        }) => (
+          <form className="form-input__form" onSubmit={handleSubmit}>
+            <div className="form-input__item">
 
-      </form>
+              <input
+                id="company"
+                name="company"
+                type="text"
+                style={errors.company && { border: '1px solid red' }}
+                className="form-input__item__input form-input__item__input--add-margin"
+                onChange={(event) => {
+                  handleChange(event);
+                  storeItems.updateCompany(event.target.value);
+                }}
+                value={storeItems.company}
+                placeholder="Company"
+              />
+            </div>
+            <div className="form-input__item">
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                style={errors.name && { border: '1px solid red' }}
+                className="form-input__item__input"
+                onChange={(event) => {
+                  handleChange(event);
+                  storeItems.updateName(event.target.value);
+                }}
+                value={values.name}
+                placeholder="Full name"
+              />
+            </div>
+
+            <div className="form-input__item">
+              <span>
+                <select
+                  className="form-input__item__select"
+                  onChange={
+                    (event) => {
+                      storeItems.updateDialCode(event.target.value);
+                    }
+                }
+                >
+                  { code ? <option value="code">{code}</option> : countryData.map((data) => (
+                    <option value={data.dial_code}>
+                      {data.dial_code}
+                    </option>
+                  ))}
+
+                </select>
+              </span>
+              <input
+                id="phone"
+                name="phone"
+                type="phone"
+                style={errors.phone && { border: '1px solid red' }}
+                className="form-input__item__input phone__input"
+                onChange={(event) => {
+                  handleChange(event);
+                  storeItems.updatePhone(event.target.value);
+                }}
+                value={values.phone}
+                placeholder=""
+              />
+            </div>
+            <div className="form-input__item">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                style={errors.email && { border: '1px solid red' }}
+                className="form-input__item__input"
+                onChange={(event) => {
+                  handleChange(event);
+                  storeItems.updateEmail(event.target.value);
+                }}
+                value={values.email}
+                placeholder="E-mail"
+              />
+            </div>
+            <div className="form-input__item__submit">
+              <button className="form-input__item__submit__button" disabled={!isValid} type="submit">Get Informed</button>
+            </div>
+          </form>
+        )}
+      </Formik>
     </div>
   );
 };
