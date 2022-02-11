@@ -1,0 +1,69 @@
+@use '/src/styles/base';
+
+.sub-box {
+  text-align: center;
+  background: #fff;
+  color: map-get(base.$colors, grey-dark);
+  padding: 4rem 2rem;
+  border-radius: 10px;
+  margin: 1.5rem 0 1.5rem 5rem;
+
+
+
+  &__heading {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  &__subheading{
+    font-size: 1.1rem;
+    font-weight: 500;
+
+  }
+  hr {
+    margin-top: 1.8rem;
+    width: 85%
+  }
+
+  .sub-box__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1.1rem;
+    //margin: 2.2rem 0;
+      div:nth-child(1){
+        text-align: left;
+        &>p {
+          margin: 1.5rem 0;
+        }
+
+      }
+      div:nth-child(2){
+        text-align: left;
+        margin-left: 2rem;
+        font-weight: bold;
+        &>p {
+          margin: 1.5rem 0;
+        }
+    }
+  }
+
+}
+
+@media (max-width:base.$breakpoint-tablet ) {
+  .sub-box {
+    margin-left: 0;
+    border: none;
+  }
+}
+
+@media (max-width:base.$breakpoint-mobile) {
+  .sub-box {
+    text-align: center;
+    color: map-get(base.$colors, grey-dark);
+    border-radius: 10px;
+    margin: 0 auto;
+    border: 1px solid black;
+  }
+
+}
