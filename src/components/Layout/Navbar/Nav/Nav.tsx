@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark, faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import useStore from '../../../../store/store';
+import { useToggleStore } from '../../../../store/store';
 
 import './Nav.scss';
 import menuItems from './menuItems';
 
 const Nav: React.FC = () => {
-  const { isNavToggled, navToggle } = useStore();
+  const { isNavToggled, navToggle } = useToggleStore();
   const handleBurger = () => {
     navToggle();
     console.log(isNavToggled);

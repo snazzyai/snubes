@@ -1,10 +1,10 @@
 import './Navbar.scss';
 import Nav from './Nav/Nav';
 import NavContent from './NavContent/NavContent';
-import useStore from '../../../store/store';
+import { useToggleStore } from '../../../store/store';
 
 const Navbar: React.FC = () => {
-  const { isNavToggled } = useStore();
+  const { isNavToggled } = useToggleStore();
   return (
     <>
       <div className="Header">
