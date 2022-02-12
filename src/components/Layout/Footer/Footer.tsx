@@ -1,4 +1,6 @@
 import './Footer.scss';
+import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import footerInfoItem from './FooterItem';
 
 const Footer: React.FC = () => (
@@ -25,10 +27,12 @@ const Footer: React.FC = () => (
                     <p key={item.title} className="footer-top-item__text"><a className="footer-top-item__link" href={item.url}>{item.title}</a></p>
                   ))
               }
-        <p>
-          <i>facebook</i>
-          <i>facebook</i>
-          <i>facebook</i>
+        <p className="footer-top-item__social">
+
+          <FontAwesomeIcon icon={faFacebook} color="white" />
+          <FontAwesomeIcon icon={faTwitter} color="white" />
+          <FontAwesomeIcon icon={faLinkedin} color="white" />
+
         </p>
       </div>
     </div>

@@ -21,7 +21,17 @@
     padding: 4rem 0;
 
     background-color: map-get(base.$colors, grey-darker);
-
+    &-item__social{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      @media(max-width: base.$breakpoint-tablet){
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 20%
+      }
+    }
 
     @media(max-width: base.$breakpoint-tablet){
       display: flex;
@@ -30,7 +40,6 @@
     }
 
     &-item {
-
       &__text{
         font-size: 1rem;
       }
@@ -47,8 +56,6 @@
     font-size: 1rem;
   }
 
-
-
-
-
 }
+
+
