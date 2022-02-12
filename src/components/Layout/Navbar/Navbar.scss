@@ -1,13 +1,9 @@
 @use '/src/styles/base';
 
 .Header {
-  //width: 100%;
-  //height: 5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  //flex-wrap: wrap;
-  border: 1px solid black;
   padding: 2rem 0;
 }
 .logo {
