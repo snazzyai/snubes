@@ -1,6 +1,8 @@
 import './Testimonials.scss';
 import Slider, { Settings } from 'react-slick';
 import TestimonialItems from './TestimonialsItems';
+import next from '../../assets/images/group-25-copy.png';
+import prev from '../../assets/images/group-25.png';
 
 const Testimonials: React.FC = () => {
   const settings: Settings = {
@@ -10,8 +12,8 @@ const Testimonials: React.FC = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <img src="/src/assets/images/group-25-copy.png" alt="right arrow icon" />,
-    prevArrow: <img src="/src/assets/images/group-25.png" alt="left arrow icon" />,
+    nextArrow: <img src={next} alt="right arrow icon" />,
+    prevArrow: <img src={prev} alt="left arrow icon" />,
     dotsClass: 'button__bar',
   };
 

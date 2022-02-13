@@ -2,6 +2,7 @@ import './Navbar.scss';
 import Nav from './Nav/Nav';
 import NavContent from './NavContent/NavContent';
 import { useToggleStore } from '../../../store/store';
+import snubesLogo from '../../../assets/images/snubes-logo.png';
 
 const Navbar: React.FC = () => {
   const { isNavToggled } = useToggleStore();
@@ -11,7 +12,7 @@ const Navbar: React.FC = () => {
         <div className="logo">
           <a href="/">
             {' '}
-            <img src="/src/assets/images/snubes-logo.png" alt="snubes logo" />
+            <img src={snubesLogo} alt="snubes logo" />
             {' '}
           </a>
         </div>

@@ -2,11 +2,12 @@ import './Footer.scss';
 import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import footerInfoItem from './FooterItem';
+import awardImage from '../../../assets/images/best-of-internet-service-2018-170-px.jpg';
 
 const Footer: React.FC = () => (
   <div className="footer">
     <div className="footer-top">
-      <img src="/src/assets/images/best-of-internet-service-2018-170-px.png" alt="innovationspreis-it award" />
+      <img src={awardImage} alt="innovationspreis-it award" />
       <div className="footer-top-item">
         {
                   footerInfoItem[0].map((item) => (
